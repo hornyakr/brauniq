@@ -26,3 +26,6 @@
 
 ### Ide ###
 .idea/
+
+### Node ###
+/node_modules/
