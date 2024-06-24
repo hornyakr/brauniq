@@ -1,0 +1,10 @@
+<div{{ attributes }}>
+    <form class="d-flex gap-2">
+        <input type="number" data-model="amount" />
+        <button class="btn btn-primary d-flex align-items-center gap-2" data-action="live#action" data-live-action-param="addToCart" data-loading="addClass(disabled)">
+            <span class="spinner-border spinner-border-sm" aria-hidden="true" data-loading></span>
+            <span role="status" data-loading>Betöltés...</span>
+            <span data-loading="hide">Kosárba</span>
+        </button>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+<div {{ attributes }}>
+    <form class="mb-4 w-25">
+        <label for="order">Rendezés:</label>
+        <select id="order" name="orderBy" data-model="on(change)|orderBy" class="form-select" aria-label="Rendezés">
+            <option value="">Alapértelmezett</option>
+            <option value="name" {{ orderBy == 'name' ? 'selected' : '' }}>Név</option>
+            <option value="price" {{ orderBy == 'price' ? 'selected' : '' }}>Ár</option>
+        </select>
+    </form>
+
+    <ul class="d-flex flex-column gap-4 p-0">
+        {% for product in this.products %}
+            <li class="card w-fit">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div>
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">{{ product.price }} Ft</h6>
+                    </div>
+
+                    {{ component('Cart:AddToCart', {
+                        product: product
+                    }) }}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
